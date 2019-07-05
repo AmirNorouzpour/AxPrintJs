@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<script>
+
+    function print() {
+        var images = $('img').map(function () {
+            return $(this).attr('src');
+        });
+
+        var setting = {
+            sources: images,
+            customCss: "width:100%;margin-top:10px",
+            isCenter: true,
+            header: 'تست هدر'
+        };
+        PrintImage(setting);
+    }
+
+
+</script>
+<h2>HTML Image</h2>
+<img src="~/Content/Images/img_chania.jpg" />
+<img src="~/Content/Images/img_girl.jpg" />
+<br />
+@*<a href="#" onclick="PrintImage('/Content/Images/img_girl.jpg','/Content/Images/img_chania.jpg'); return false;">PRINT</a>*@
+<button onclick="print(); return false;">Print Images</button>
+
